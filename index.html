@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter extra</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <!-- Financial background symbols -->
+    <div class="financial-symbols">
+      <div class="symbol" style="top: 10%; left: 5%; animation-delay: 0s">
+        $
+      </div>
+      <div class="symbol" style="top: 25%; left: 25%; animation-delay: 2s">
+        €
+      </div>
+      <div class="symbol" style="top: 40%; left: 10%; animation-delay: 4s">
+        £
+      </div>
+      <div class="symbol" style="top: 15%; left: 70%; animation-delay: 1s">
+        ¥
+      </div>
+      <div class="symbol" style="top: 60%; left: 85%; animation-delay: 3s">
+        $
+      </div>
+      <div class="symbol" style="top: 75%; left: 30%; animation-delay: 5s">
+        €
+      </div>
+      <div class="symbol" style="top: 80%; left: 65%; animation-delay: 2.5s">
+        £
+      </div>
+      <div class="symbol" style="top: 35%; left: 90%; animation-delay: 1.5s">
+        ¥
+      </div>
+      <div class="symbol" style="top: 50%; left: 50%; animation-delay: 3.5s">
+        $
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Currency Converter</h1>
+
+      <div class="currency-row">
+        <div class="currency-amount">
+          <label>Amount</label>
+          <input
+            type="number"
+            id="amount-from"
+            placeholder="Enter amount"
+            value="1"
+          />
+        </div>
+        <div class="currency-type">
+          <label>From</label>
+          <select id="currency-from">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="CAD">CAD</option>
+            <option value="AUD">AUD</option>
+            <option value="CHF">CHF</option>
+            <option value="CNY">CNY</option>
+            <option value="INR">INR</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="currency-row">
+        <div class="currency-amount">
+          <label>Amount</label>
+          <input
+            type="number"
+            id="amount-to"
+            placeholder="Converted amount"
+            disabled
+          />
+        </div>
+        <div class="currency-type">
+          <label>To</label>
+          <select id="currency-to">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="CAD">CAD</option>
+            <option value="AUD">AUD</option>
+            <option value="CHF">CHF</option>
+            <option value="CNY">CNY</option>
+            <option value="INR">INR</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="convert-btn" id="convert-btn">Convert</button>
+
+      <div class="result" id="result">1 USD = 0.93 EUR</div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
