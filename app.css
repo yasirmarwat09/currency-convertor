@@ -16,24 +16,37 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html,
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   height: 100%;
   width: 100%;
   overflow: hidden; /* Prevent scrolling */
-}
-
-body {
   background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  background-attachment: fixed; /* Keep background fixed */
-  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100% 100%; /* Ensure full coverage */
+  background-repeat: no-repeat;
   color: var(--text-light);
-  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   position: relative;
+}
+
+/* Add an additional background element for mobile */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  z-index: -2;
 }
 
 /* Financial background elements */
@@ -373,14 +386,18 @@ select {
   html,
   body {
     overflow: hidden; /* Ensure no scrolling on smallest screens */
+    min-height: 100%; /* Force full height */
   }
 
   body {
     padding: 0.5rem;
     height: 100%;
+    min-height: 100vh; /* Force viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Add mobile-specific background as a fallback */
+    background: #0f172a; /* Solid fallback color */
   }
 
   .container {
@@ -397,5 +414,14 @@ select {
 
   .symbol {
     font-size: 2rem;
+  }
+}
+
+/* Explicit mobile background fix */
+@media (max-width: 480px) and (orientation: portrait) {
+  body {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a) !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
   }
 }
