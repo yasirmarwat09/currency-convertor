@@ -16,16 +16,24 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
 body {
   background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  background-attachment: fixed; /* Keep background fixed */
+  background-size: cover;
   color: var(--text-light);
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   position: relative;
-  overflow-x: hidden;
 }
 
 /* Financial background elements */
@@ -318,9 +326,14 @@ select {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
   .container {
     padding: 1.5rem;
     max-width: 95%;
+    margin: auto; /* Center in viewport */
   }
 
   h1 {
@@ -357,12 +370,24 @@ select {
 }
 
 @media (max-width: 480px) {
+  html,
+  body {
+    overflow: hidden; /* Ensure no scrolling on smallest screens */
+  }
+
   body {
     padding: 0.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .container {
     padding: 1.2rem;
+    height: auto;
+    max-height: 95vh; /* Ensure container fits viewport height */
+    overflow-y: auto; /* Add scroll to container if needed instead of body */
   }
 
   h1 {
